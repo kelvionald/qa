@@ -1,0 +1,23 @@
+triangle.exe
+неизвестная ошибка
+
+triangle.exe 1 2
+неизвестная ошибка
+
+triangle.exe 1ф 2 3
+неизвестная ошибка
+
+triangle.exe -2 4 5
+не треугольник
+
+triangle.exe 2 2 10
+не треугольник
+
+triangle.exe 2 4 5
+обычный
+
+triangle.exe 2 2 3
+равнобедренный
+
+triangle.exe 2 2 2
+равносторонний

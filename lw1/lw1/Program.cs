@@ -13,7 +13,7 @@ namespace lw1
                     double a = Convert.ToDouble(args[0]);
                     double b = Convert.ToDouble(args[1]);
                     double c = Convert.ToDouble(args[2]);
-                    if (a + b <= c || a + c <= b || b + c <= a)
+                    if (a + b <= c || a + c <= b || b + c <= a || a < 0 || b < 0 || c < 0)
                     {
                         Console.WriteLine("не треугольник");
                     }

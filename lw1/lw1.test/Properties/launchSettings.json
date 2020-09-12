@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "lw1.test": {
+      "commandName": "Project",
+      "commandLineArgs": "input.txt"
+    }
+  }
+}
