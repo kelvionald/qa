@@ -1,7 +1,8 @@
 {
   "profiles": {
     "lw1": {
-      "commandName": "Project"
+      "commandName": "Project",
+      "commandLineArgs": "1,7976931348623157E+308 1,7976931348623157E+308 1,7976931348623157E+308"
     }
   }
 }

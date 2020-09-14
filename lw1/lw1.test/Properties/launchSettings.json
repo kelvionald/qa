@@ -2,7 +2,7 @@
   "profiles": {
     "lw1.test": {
       "commandName": "Project",
-      "commandLineArgs": "input.txt"
+      "commandLineArgs": "\"../../../input.txt\""
     }
   }
 }

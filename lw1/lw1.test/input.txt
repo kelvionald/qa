@@ -4,14 +4,53 @@ triangle.exe
 triangle.exe 1 2
 неизвестная ошибка
 
+triangle.exe 1
+неизвестная ошибка
+
 triangle.exe 1ф 2 3
 неизвестная ошибка
+
+triangle.exe 1 2 3а
+неизвестная ошибка
+
+triangle.exe 1. 2 3
+неизвестная ошибка
+
+triangle.exe 1.2 2 3
+неизвестная ошибка
+
+triangle.exe null 2 3
+неизвестная ошибка
+
+triangle.exe 6/2 4 5
+неизвестная ошибка
+
+triangle.exe 0,2 2 3
+не треугольник
 
 triangle.exe -2 4 5
 не треугольник
 
+triangle.exe -2 -4 -5
+не треугольник
+
+triangle.exe 0 4 5
+не треугольник
+
 triangle.exe 2 2 10
 не треугольник
+
+triangle.exe 1,2 2 3
+обычный
+
+triangle.exe 1,0000002 2 3
+обычный
+
+triangle.exe 1,0000001 2,0000001 3,0000001
+обычный
+
+triangle.exe 1,2 2 3
+обычный
 
 triangle.exe 2 4 5
 обычный
@@ -19,5 +58,11 @@ triangle.exe 2 4 5
 triangle.exe 2 2 3
 равнобедренный
 
+triangle.exe 2  2 3
+равнобедренный
+
 triangle.exe 2 2 2
+равносторонний
+
+triangle.exe 1,7976931348623157E+308 1,7976931348623157E+308 1,7976931348623157E+308
 равносторонний
