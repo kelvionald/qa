@@ -133,3 +133,8 @@ $RECYCLE.BIN/
 .DS_Store
 
 _NCrunch*
+
+venv
+.idea
+__pycache__
+.coverage
