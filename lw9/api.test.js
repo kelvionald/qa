@@ -35,13 +35,6 @@ function createProduct() {
     }
 }
 
-function normalizeProduct(product) {
-    // product.price = parseInt(price)
-    // product.old_price = parseInt(old_price)
-    // product.status = parseInt(status)
-    return product
-}
-
 function expectToBeInteger(value) {
     expect(value === parseInt(value)).toBeTruthy()
 }
@@ -50,25 +43,6 @@ test('чтение товаров', async () => {
     const products = await api.getAllProducts()
     expect(products).toEqual(expect.arrayContaining(all_products))
 })
-
-// test('создание товара', async () => {
-//     const product_expect = createProduct()
-//     const response = await api.addProduct(product_expect)
-//     expect(response.status).toEqual(STATUS_CREATED)
-//     expectToBeInteger(response.id)
-// })
-//
-// test('чтение товара', async () => {
-//     const product_expect = createProduct()
-//     const response = await api.addProduct(product_expect)
-//     response.id += ''
-//     const COUNT_PRODUCT = 1
-//     let products = await api.getAllProducts()
-//
-//     products = products.filter(p => {return p.id === response.id})
-//     expect(products.length).toEqual(COUNT_PRODUCT)
-//     expect(products[0]).toMatchObject(product_expect)
-// })
 
 describe('манипуляции с одним товаром', () => {
     const product_expect = createProduct()
@@ -93,4 +67,7 @@ describe('манипуляции с одним товаром', () => {
     })
 })
 
-api.deleteAllProducts()
+async function f() {
+    await api.deleteAllProducts()
+}
+f()
