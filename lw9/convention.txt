@@ -4,3 +4,13 @@
 4. юзай константы
 5. без логики в тестах
 6. выносить в методы повторы
+
+        const NEW_WRONG_TITLE = 'New product title'
+        const NEW_WRONG_ALIAS = 'new-product-title'
+        const NEW_WRONG_CATEGORY = '0'
+        const NEW_WRONG_CONTENT = 'Новый контент'
+        const NEW_WRONG_PRICE = '-1'
+        const NEW_WRONG_OLD_PRICE = '10'
+        const NEW_WRONG_STATUS = '2'
+        const NEW_WRONG_KEYWRODS = null
+        const NEW_WRONG_DESCRIPTION = 'new description'

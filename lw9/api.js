@@ -34,6 +34,27 @@ class Api {
             }
         }
     }
+
+    async editProduct(product) {
+        const response = await fetch(`${this.baseUrl}/api/editproduct`, {
+            method: 'POST',
+            body: JSON.stringify(product),
+            headers: {'Content-Type': 'application/json'}
+        })
+        return response.json()
+    }
+
+    async getProduct(productId) {
+        let products = await this.getAllProducts()
+        productId += ''
+        products = products.filter(p => {
+            return p.id === productId
+        })
+        if (products.length) {
+            return products[0]
+        }
+        return null
+    }
 }
 
 module.exports = Api
