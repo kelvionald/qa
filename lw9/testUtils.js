@@ -15,9 +15,8 @@ module.exports.createProductOnServer = async function (title = null) {
 }
 
 module.exports.makeTestEditProduct = function (testName, setup, check) {
-    it.concurrent(testName, async () => {
-        let oldProduct = await module.exports.createProductOnServer()
-        oldProduct.title += testName
+    it(testName, async () => {
+        let oldProduct = await module.exports.createProductOnServer(testName)
         oldProduct = setup(oldProduct)
 
         response = await api.editProduct(oldProduct)

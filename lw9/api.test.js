@@ -59,11 +59,11 @@ it('чтение созданного товара', async () => {
     await api.deleteProduct(response.id)
 }, config.MAX_TIMEOUT)
 
-describe('редактирование', () => {
+describe('редактирование товара', () => {
     let response = null
     let product = null
-    const NEW_TITLE = 'New product title'
-    const NEW_ALIAS = 'new-product-title'
+    const NEW_TITLE = 'New product title1'
+    const NEW_ALIAS = 'new-product-title1'
     const NEW_CATEGORY = '2'
     const NEW_CONTENT = 'Новый контент'
     const NEW_PRICE = '400'
