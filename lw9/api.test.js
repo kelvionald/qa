@@ -62,119 +62,132 @@ it('чтение созданного товара', async () => {
 describe('редактирование товара', () => {
     let response = null
     let product = null
+
     const NEW_TITLE = 'New product title1'
     const NEW_ALIAS = 'new-product-title1'
-    const NEW_CATEGORY = '2'
-    const NEW_CONTENT = 'Новый контент'
-    const NEW_PRICE = '400'
-    const NEW_OLD_PRICE = '10'
-    const NEW_STATUS = '0'
-    const NEW_KEYWRODS = 'new keywords'
-    const NEW_DESCRIPTION = 'new description'
-    const NEW_HIT = '0'
-    const NEW_WRONG_HIT = '2'
-    const NEW_WRONG_STATUS = '2'
-
     makeTestEditProduct('изменение названия', (product) => {
-        product.title = NEW_TITLE
-        return product
+        const pb = new ProductBuilder(product)
+        pb.setTitle(NEW_TITLE)
+        return pb.product
     }, (oldProduct, newProduct) => {
         expect(newProduct.title).toBe(NEW_TITLE)
         expect(newProduct.alias).toBe(NEW_ALIAS)
     })
 
+    const NEW_CATEGORY = '2'
     makeTestEditProduct('изменение категории', (product) => {
-        product.category_id = NEW_CATEGORY
-        return product
+        const pb = new ProductBuilder(product)
+        pb.setCategory(NEW_CATEGORY)
+        return pb.product
     }, (oldProduct, newProduct) => {
         expect(newProduct.category_id).toBe(NEW_CATEGORY)
     })
 
+    const NEW_CONTENT = 'Новый контент'
     makeTestEditProduct('изменение контента', (product) => {
-        product.content = NEW_CONTENT
-        return product
+        const pb = new ProductBuilder(product)
+        pb.setContent(NEW_CONTENT)
+        return pb.product
     }, (oldProduct, newProduct) => {
         expect(newProduct.content).toBe(NEW_CONTENT)
     })
 
+    const NEW_PRICE = '400'
     makeTestEditProduct('изменение цены', (product) => {
-        product.price = NEW_PRICE
-        return product
+        const pb = new ProductBuilder(product)
+        pb.setPrice(NEW_PRICE)
+        return pb.product
     }, (oldProduct, newProduct) => {
         expect(newProduct.price).toBe(NEW_PRICE)
     })
 
+    const NEW_OLD_PRICE = '10'
     makeTestEditProduct('изменение старой цены', (product) => {
-        product.old_price = NEW_OLD_PRICE
-        return product
+        const pb = new ProductBuilder(product)
+        pb.setOldPrice(NEW_OLD_PRICE)
+        return pb.product
     }, (oldProduct, newProduct) => {
         expect(newProduct.old_price).toBe(NEW_OLD_PRICE)
     })
 
+    const NEW_STATUS = '0'
     makeTestEditProduct('изменение статуса', (product) => {
-        product.status = NEW_STATUS
-        return product
+        const pb = new ProductBuilder(product)
+        pb.setStatus(NEW_STATUS)
+        return pb.product
     }, (oldProduct, newProduct) => {
         expect(newProduct.status).toBe(NEW_STATUS)
     })
 
+    const NEW_KEYWRODS = 'new keywords'
     makeTestEditProduct('изменение ключевых слов', (product) => {
-        product.keywords = NEW_KEYWRODS
-        return product
+        const pb = new ProductBuilder(product)
+        pb.setKeywords(NEW_KEYWRODS)
+        return pb.product
     }, (oldProduct, newProduct) => {
         expect(newProduct.keywords).toBe(NEW_KEYWRODS)
     })
 
+    const NEW_DESCRIPTION = 'new description'
     makeTestEditProduct('изменение описания', (product) => {
-        product.description = NEW_DESCRIPTION
-        return product
+        const pb = new ProductBuilder(product)
+        pb.setDescription(NEW_DESCRIPTION)
+        return pb.product
     }, (oldProduct, newProduct) => {
         expect(newProduct.description).toBe(NEW_DESCRIPTION)
     })
 
+    const NEW_HIT = '0'
     makeTestEditProduct('изменение статуса хита', (product) => {
-        product.hit = NEW_HIT
-        return product
+        const pb = new ProductBuilder(product)
+        pb.setHit(NEW_HIT)
+        return pb.product
     }, (oldProduct, newProduct) => {
         expect(newProduct.hit).toBe(NEW_HIT)
     })
 
+    const NEW_WRONG_STATUS = '2'
     makeTestEditProduct('изменение статуса числом вне диапазона', (product) => {
-        product.status = NEW_WRONG_STATUS
-        return product
+        const pb = new ProductBuilder(product)
+        pb.setStatus(NEW_WRONG_STATUS)
+        return pb.product
     }, (oldProduct, newProduct) => {
         expect(newProduct).toBe(null)
     })
 
+    const NEW_WRONG_HIT = '2'
     makeTestEditProduct('изменение статуса хита числом вне диапазона', (product) => {
-        product.hit = NEW_WRONG_HIT
-        return product
+        const pb = new ProductBuilder(product)
+        pb.setHit(NEW_WRONG_HIT)
+        return pb.product
     }, (oldProduct, newProduct) => {
         expect(newProduct).toBe(null)
     })
-
-    const NEW_WRONG_CATEGORY = '0'
-    const NEW_WRONG_PRICE = '-1'
-    const NEW_WRONG_OLD_PRICE = '-1'
 
     describe('не корректное', () => {
+        const NEW_WRONG_CATEGORY = '0'
         makeTestEditProduct('изменение категории', (product) => {
-            product.category_id = NEW_WRONG_CATEGORY
-            return product
+            const pb = new ProductBuilder(product)
+            pb.setCategory(NEW_WRONG_CATEGORY)
+            return pb.product
         }, (oldProduct, newProduct) => {
             expect(newProduct).toBe(null)
         })
 
+        const NEW_WRONG_PRICE = '-1'
         makeTestEditProduct('изменение цены', (product) => {
-            product.price = NEW_WRONG_PRICE
-            return product
+            const pb = new ProductBuilder(product)
+            pb.setPrice(NEW_WRONG_PRICE)
+            return pb.product
         }, (oldProduct, newProduct) => {
             expect(newProduct).toBe(null)
         })
 
+        const NEW_WRONG_OLD_PRICE = '-1'
         makeTestEditProduct('изменение старой цены', (product) => {
-            product.old_price = NEW_WRONG_OLD_PRICE
-            return product
+            const pb = new ProductBuilder(product)
+            pb.setOldPrice(NEW_WRONG_OLD_PRICE)
+            return pb.product
         }, (oldProduct, newProduct) => {
             expect(newProduct).toBe(null)
         })
